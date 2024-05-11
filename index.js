@@ -12,11 +12,10 @@ const UserRouter = require('./Routes/UserRouter')
 const CochesRouter = require('./Routes/CochesRouter')
 const CableRouter = require('./Routes/CableRouter')
 const TubosRouter = require('./Routes/TubosRouter')
-const TornilleriaRouter = require('./Routes/TornilleriaRouter')*/
-const AccueilDescription = require('./Routes/AccueilDescription')
+const TornilleriaRouter = require('./Routes/TornilleriaRouter')
+const AccueilDescription = require('./Routes/AccueilDescription')*/
 //const cloudinary = require('../utils/cloudinary')
 const fs = require('fs');
-//const upload = require('./middlewares/multer')
 
 const cloudinary = require('cloudinary').v2;
 
@@ -46,9 +45,9 @@ app.use("/api/user", UserRouter)
 app.use("/api/Coches", CochesRouter)
 app.use("/api/Cables", CableRouter)
 app.use("/api/TubosRouter", TubosRouter)
-app.use("/api/Tornilleria", TornilleriaRouter)*/
+app.use("/api/Tornilleria", TornilleriaRouter)
 
-app.use("/api/AccueilDescription", AccueilDescription)
+app.use("/api/AccueilDescription", AccueilDescription)*/
 
 //ici
 const storage = multer.memoryStorage();
