@@ -13,6 +13,7 @@ const CochesRouter = require('./Routes/CochesRouter')
 const CableRouter = require('./Routes/CableRouter')
 const TubosRouter = require('./Routes/TubosRouter')
 const TornilleriaRouter = require('./Routes/TornilleriaRouter')*/
+const CategorieRouter = require('./Routes/CategorieTouter')
 const CableRouter = require('./Routes/CableRouter')
 //const AccueilDescription = require('./Routes/AccueilDescription')
 //const cloudinary = require('../utils/cloudinary')
@@ -49,6 +50,7 @@ app.use("/api/TubosRouter", TubosRouter)
 app.use("/api/Tornilleria", TornilleriaRouter)*/
 
 //app.use("/api/AccueilDescription", AccueilDescription)
+app.use("/api/Categorie", CategorieRouter)
 app.use("/api/Cables", CableRouter)
 
 //ici
