@@ -24,5 +24,5 @@ app.use(express.json({limit: "100mb"}))
 app.use(express.urlencoded({limit:"100mb", extended:true}))
 
 
-app.get('/', (req, res) => res.send('Hello World Test!'))
+app.get('/', (req, res) => res.send('Hello World !'))
 app.listen(process.env.PORT, () => console.log(`Example app listening on port ${port}!`))
