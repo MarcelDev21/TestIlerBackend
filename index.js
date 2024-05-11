@@ -13,6 +13,7 @@ const CochesRouter = require('./Routes/CochesRouter')
 const CableRouter = require('./Routes/CableRouter')
 const TubosRouter = require('./Routes/TubosRouter')
 const TornilleriaRouter = require('./Routes/TornilleriaRouter')*/
+const ContactRouter = require('./Routes/ContactRouter')
 const CochesRouter = require('./Routes/CochesRouter')
 const CategorieRouter = require('./Routes/CategorieTouter')
 const CableRouter = require('./Routes/CableRouter')
