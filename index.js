@@ -14,10 +14,10 @@ cloudinary.config({
   api_secret: process.env.API_SECRET,
 });
 
-/*mongoose.connect(process.env.MONGO_URL,{
+mongoose.connect(process.env.MONGO_URL,{
   //useNewUrlParser: true, 
 }).then(()=> console.log("connected succesfully")).catch((error)=> console.log(error))
-//Ilerdagua2024*/
+//Ilerdagua2024
 
 
 app.use(express.json({limit: "100mb"}))
