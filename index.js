@@ -13,6 +13,7 @@ const CochesRouter = require('./Routes/CochesRouter')
 const CableRouter = require('./Routes/CableRouter')
 const TubosRouter = require('./Routes/TubosRouter')
 const TornilleriaRouter = require('./Routes/TornilleriaRouter')*/
+const TornilleriaRouter = require('./Routes/TornilleriaRouter')
 const ProduitRouter = require('./Routes/ProduitRouter')
 const FavorisRouter = require('./Routes/FavorisRouter')
 const ContactRouter = require('./Routes/ContactRouter')
@@ -54,6 +55,7 @@ app.use("/api/TubosRouter", TubosRouter)
 app.use("/api/Tornilleria", TornilleriaRouter)*/
 
 //app.use("/api/AccueilDescription", AccueilDescription)
+app.use("/api/Tornilleria", TornilleriaRouter)
 app.use("/api/Produit", ProduitRouter)
 app.use("/api/Favoris", FavorisRouter)
 app.use("/api/contact", ContactRouter)
