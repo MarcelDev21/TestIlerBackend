@@ -3,6 +3,15 @@ const app = express()
 const port = 3000
 const dotenv = require('dotenv')
 const mongoose = require("mongoose")
+const cloudinary = require('cloudinary').v2;
+const multer = require('multer')
+dotenv.config()
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
+});
 
 /*mongoose.connect(process.env.MONGO_URL,{
   //useNewUrlParser: true, 
