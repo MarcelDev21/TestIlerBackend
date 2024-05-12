@@ -22,7 +22,7 @@ const ContactRouter = require('./Routes/ContactRouter')
 const CochesRouter = require('./Routes/CochesRouter')
 const CategorieRouter = require('./Routes/CategorieTouter')
 const CableRouter = require('./Routes/CableRouter')
-//const AccueilDescription = require('./Routes/AccueilDescription')
+const AccueilDescription = require('./Routes/AccueilDescription')
 //const cloudinary = require('../utils/cloudinary')
 const fs = require('fs');
 
@@ -49,7 +49,7 @@ app.use(express.urlencoded({limit:"100mb", extended:true}))
 app.use("/api/user", UserRouter)
 
 
-//app.use("/api/AccueilDescription", AccueilDescription)
+app.use("/api/AccueilDescription", AccueilDescription)
 app.use("/api/TubosRouter", TubosRouter)
 app.use("/api/Tornilleria", TornilleriaRouter)
 app.use("/api/Produit", ProduitRouter)

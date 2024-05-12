@@ -1,7 +1,7 @@
 const AccueilDescription = require('../Models/AccueilDescription')
 const cloudinary = require("cloudinary").v2;
-const Resend = require('resend')
-const nodemailer = require('nodemailer');
+//const Resend = require('resend')
+//const nodemailer = require('nodemailer');
 //const mailjet = require('node-mailjet').connect(apiKey, apiSecret);
 //const mailjet = require('node-mailjet').connect("c21e4c11f8b412519042161cd417abee", "e9bf663a5dfe2a6860443703c639df5f");
 const dotenv = require('dotenv')
