@@ -21,13 +21,13 @@ dotenv.config()
     process.env.MJ_APIKEY_PRIVATE,
  );
 
-function generateHTML(emailContent) {
+/*function generateHTML(emailContent) {
     return `
       <h3>${emailContent.title}</h3>
       <p>${emailContent.message}</p>
       <!-- Ajoutez d'autres éléments HTML en fonction de vos besoins -->
     `;
-  }
+  }*/
 
 module.exports = {
     CreerDetail : async (req, res) => {
