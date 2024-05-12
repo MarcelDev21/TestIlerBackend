@@ -5,7 +5,7 @@ const cloudinary = require("cloudinary").v2;
 //const mailjet = require('node-mailjet').connect(apiKey, apiSecret);
 //const mailjet = require('node-mailjet').connect("c21e4c11f8b412519042161cd417abee", "e9bf663a5dfe2a6860443703c639df5f");
 const dotenv = require('dotenv')
-const Mailjet = require('node-mailjet');
+//const Mailjet = require('node-mailjet');
 const TokenNotification = require('../Models/TokensNotification')
 const User = require('../Models/UserModel')
 
@@ -16,10 +16,10 @@ dotenv.config()
      "e9bf663a5dfe2a6860443703c639df5f",
  );*/
 
- const mailjet = Mailjet.apiConnect(
+/* const mailjet = Mailjet.apiConnect(
     process.env.MJ_APIKEY_PUBLIC,
     process.env.MJ_APIKEY_PRIVATE,
- );
+ );*/
 
 /*function generateHTML(emailContent) {
     return `
