@@ -3,7 +3,33 @@ const cloudinary = require("cloudinary").v2;
 const moment = require('moment');
 
 module.exports= {
-    AjouterVoiture : async (req, res) => {
+
+    AjoutVoitures : async (req,res) => {
+        console.log("agit")
+        res.status(201).json({url: req.file.path})
+    },
+
+    AjouterVoiture : async (req,res) => {
+        const newVoiture = new CochesSchema({
+            nomProprietaire: req.body.nomProprietaire,
+            immatriculationVoiture: req.body.immatriculationVoiture,
+            imageVoiture: req.body.imageVoiture,
+            dateItv: moment(new Date(req.body.dateItv)).format('YYYY-MM-DD')
+        })
+        try {
+            const RechercheMaticule = await CochesSchema.findOne({immatriculationVoiture: req.body.immatriculationVoiture})
+            if(RechercheMaticule){
+                res.status(202).json({message: "Cette Voiture existe deja"})
+                return
+            }
+            await newVoiture.save()  
+            res.status(202).json(newVoiture) 
+        } catch (error) {
+            res.status(500).json({message: error})
+        }
+    },
+
+    AjouterVoitures : async (req, res) => {
         const result = await cloudinary.uploader.upload(req.file.path,{folder: "Coches"});
         //console.log(result)
 

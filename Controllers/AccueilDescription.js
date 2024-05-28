@@ -87,8 +87,8 @@ module.exports = {
       };
       const goData = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
         type: 'POST',
-    data: JSON.stringify(data),
-    contentType: 'application/json'
+        data: JSON.stringify(data),
+        contentType: 'application/json'
       })
       const due = await goData.json()
       console.log(due)
