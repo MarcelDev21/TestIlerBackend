@@ -136,14 +136,20 @@ module.exports = {
     },*/
 
     KeepDataNotification : async (req,res) => {
+     
       const getData = await User.findOne({nom:req.body.nom})
-     // console.log(getData._id)
+      console.log("execution")
 
       const newTokens = new TokenNotification({
         userId: getData._id,
+        nom: req.body.nom,
         token: req.body.token
       })
       try {
+        const verifierSiToken = await TokenNotification.findOne({nom: req.body.nom})
+        if(verifierSiToken){
+          return res.status(201).json({message:"Vous avez déja un token"})
+        }
         await newTokens.save()
         res.status(201).json(newTokens)
       } catch (error) {
