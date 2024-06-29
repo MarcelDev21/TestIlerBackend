@@ -2,6 +2,7 @@ const AccueilDescription = require('../Models/AccueilDescription')
 const cloudinary = require("cloudinary").v2;
 const dotenv = require('dotenv')
 const nodemailer = require('nodemailer');
+const { MailtrapClient } = require("mailtrap");
 //const resend = new Resend("re_123456789");
 //const Resend = require('resend')
 //const nodemailer = require('nodemailer');
@@ -74,7 +75,7 @@ module.exports = {
         }
     },
 
-    SendMail : async (req, res)=> {
+    /*SendMail : async (req, res)=> {
       try {
         var data = {
           service_id: 'service_n49dh4i',
@@ -96,7 +97,42 @@ module.exports = {
       } catch (error) {
         console.log(error)
       }
+    },*/
+
+
+    EnvoyerMessageAvecMailTrap : async (req,res)=> {
+      try {
+        const { MailtrapClient } = require("mailtrap");
+
+        const TOKEN = "1d1ff8d7c16e8e419bb4a3a4b8d1a347";
+        const ENDPOINT = "https://send.api.mailtrap.io/";
+        
+        const client = new MailtrapClient({ endpoint: ENDPOINT, token: TOKEN });
+        
+        const sender = {
+          email: "mailtrap@demomailtrap.com",
+          name: "Mailtrap Objet",
+        };
+        const recipients = [
+          {
+            email: "bidstring3@gmail.com",
+          }
+        ];
+        
+        client
+          .send({
+            from: sender,
+            to: recipients,
+            subject: "You are awesome!",
+            text: "Congrats for sending test email with Mailtrap!",
+            category: "Integration Test",
+          })
+          .then(console.log, console.error);
+      } catch (error) {
+        console.log(error)
+      }
     },
+
 
    /* SendMail : async(req, res) => {
         const titleUse = req.body.title
