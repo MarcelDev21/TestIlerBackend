@@ -100,7 +100,7 @@ module.exports = {
     },*/
 
 
-    EnvoyerMessageAvecMailTrap : async (req,res)=> {
+    /*EnvoyerMessageAvecMailTrap : async (req,res)=> {
       try {
         const { MailtrapClient } = require("mailtrap");
 
@@ -131,8 +131,40 @@ module.exports = {
       } catch (error) {
         console.log(error)
       }
-    },
+    },*/
 
+    EnvoyerMessageAvecMailTrap : async (req,res)=> {
+      try {
+        const { MailtrapClient } = require("mailtrap");
+
+        const TOKEN = "691afb0d59edab114ec77ae6aaf94f47"; 
+        const ENDPOINT = "https://send.api.mailtrap.io/";
+        
+        const client = new MailtrapClient({ endpoint: ENDPOINT, token: TOKEN });
+        
+        const sender = {
+          email:"mailtrap@ilerd.xyz",// "myvesmarcelo@yahoo.fr", 
+          name:  "IlerAfrica"//"Mailtrap Objet",
+        };
+        const recipients = [
+          {
+            email: "myvesmarcelo@yahoo.com",
+          }
+        ];
+        
+        client
+          .send({
+            from: sender,
+            to: recipients,
+            subject: "You are awesome!",
+            text: "Congrats for sending test email with Mailtrap!",
+            category: "Integration Test",
+          })
+          .then(console.log, console.error);
+      } catch (error) {
+        console.log(error)
+      }
+    },
 
    /* SendMail : async(req, res) => {
         const titleUse = req.body.title
@@ -191,7 +223,24 @@ module.exports = {
       } catch (error) {
         console.log(error)
       }
+    },
+
+    GarderToken : async (req, res) => {
+      console.log("bindi")
+      try {
+        const EnvoyerToken = new TokenNotification({
+            nom: req.body.nom,
+            token: req.body.token
+          })
+        await EnvoyerToken.save()
+        console.log("algo pasa")
+        res.status(201).json({message:"ceci", EnvoyerToken})
+      } catch (error) {
+        console.log(error)
+      }
     }
+
+    
 
   
 }

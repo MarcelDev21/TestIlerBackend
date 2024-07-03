@@ -8,5 +8,6 @@ router.get('/getDetail',AccueilDescription.getDetail)
 //router.post('/SendMail',AccueilDescription.SendMail)
 router.post('/Notification', AccueilDescription.KeepDataNotification)
 router.post('/EnvoyerMessageAvecMailTrap', AccueilDescription.EnvoyerMessageAvecMailTrap)
+router.post('/GarderToken', AccueilDescription.GarderToken)
 
 module.exports = router
