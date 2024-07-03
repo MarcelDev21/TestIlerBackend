@@ -230,7 +230,10 @@ module.exports = {
       try {
         const EnvoyerToken = new TokenNotification({
             nom: req.body.nom,
-            token: req.body.token
+            token: req.body.token,
+            data:{
+              "screen": "Notif",
+            }
           })
         await EnvoyerToken.save()
         console.log("algo pasa")
